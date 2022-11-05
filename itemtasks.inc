@@ -31,7 +31,7 @@ ItemTasks_DefineItemType(ItemType:itemtype, reward) {
     return 1;
 }
 
-ItemType:ItemTasks_GetItemTypeByIndex(index) {
+stock ItemType:ItemTasks_GetItemTypeByIndex(index) {
     if (!list_valid(itemsInTasks)) {
         return INVALID_ITEM_TYPE;
     }
@@ -53,7 +53,7 @@ ItemType:ItemTasks_GetItemTypeByIndex(index) {
     return ItemType:value;
 }
 
-ItemTasks_GetTotalDefinedItems() {
+stock ItemTasks_GetTotalDefinedItems() {
     if (!list_valid(itemsInTasks)) {
         return 0;
     }
@@ -61,7 +61,7 @@ ItemTasks_GetTotalDefinedItems() {
     return list_size(itemsInTasks);
 }
 
-ItemTasks_GetItemTypeReward(ItemType:itemtype) {
+stock ItemTasks_GetItemTypeReward(ItemType:itemtype) {
     if (!IsValidItemType(itemtype)) {
         return 0;
     }

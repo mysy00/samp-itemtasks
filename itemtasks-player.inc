@@ -19,7 +19,7 @@ hook OnPlayerDisconnected(playerid) {
     list_delete(playerTaskItems[playerid]);
 }
 
-Player_SetTask(playerid) {
+stock Player_SetTask(playerid) {
     new totalTaskItems,
     itemsToBring,
     ItemType:item;
@@ -48,7 +48,7 @@ Player_SetTask(playerid) {
     return 1;
 }
 
-Player_CompleteTask(playerid) {
+stock Player_CompleteTask(playerid) {
     if (!list_valid(playerTaskItems[playerid])) {
         return 0;
     }
@@ -67,7 +67,7 @@ Player_CompleteTask(playerid) {
     return 1;
 }
 
-Player_GetActiveTaskItemTypes(playerid, ItemType:items[], size = sizeof(items)) {
+stock Player_GetActiveTaskItemTypes(playerid, ItemType:items[], size = sizeof(items)) {
     if (!list_valid(playerTaskItems[playerid])) {
         return 0;
     }
@@ -84,7 +84,7 @@ Player_GetActiveTaskItemTypes(playerid, ItemType:items[], size = sizeof(items)) 
     return 1;
 }
 
-bool:Player_HasActiveTask(playerid) {
+stock bool:Player_HasActiveTask(playerid) {
     if (!list_valid(playerTaskItems[playerid])) {
         return false;
     }
