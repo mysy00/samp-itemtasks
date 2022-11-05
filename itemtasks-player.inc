@@ -8,7 +8,7 @@
     #define ITEMTASKS_MAX_ITEMS_PER_TASK     (5)
 #endif
 
-forward Player_SetTask(playerid);
+forward Player_SetRandomTask(playerid);
 forward Player_CompleteTask(playerid);
 forward bool:Player_HasActiveTask(playerid);
 forward OnPlayerCompleteTask(playerid, totalReward);
@@ -19,7 +19,7 @@ hook OnPlayerDisconnected(playerid) {
     list_delete(playerTaskItems[playerid]);
 }
 
-stock Player_SetTask(playerid) {
+stock Player_SetRandomTask(playerid) {
     new totalTaskItems,
     itemsToBring,
     ItemType:item;

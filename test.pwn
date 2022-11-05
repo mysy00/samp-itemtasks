@@ -14,11 +14,11 @@ public OnGameModeInit() {
     ItemTasks_DefineItemType(item_Toolbox, 5);
     ItemTasks_DefineItemType(item_Tire, 2);
 
-    Player_SetTask(0);
+    Player_SetRandomTask(0);
     printf("----------------------------------------");
-    Player_SetTask(1);
+    Player_SetRandomTask(1);
     printf("----------------------------------------");
-    Player_SetTask(2);
+    Player_SetRandomTask(2);
 
     new ItemType:arr[ITEMTASKS_MAX_ITEMS_PER_TASK];
 
