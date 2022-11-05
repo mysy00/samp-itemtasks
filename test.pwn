@@ -19,6 +19,14 @@ public OnGameModeInit() {
     Player_SetRandomTask(1);
     printf("----------------------------------------");
     Player_SetRandomTask(2);
+    printf("----------------------------------------");
+
+    new ItemType:items[3];
+    items[0] = item_Marijuana;
+    items[1] = item_Marijuana;
+    items[2] = item_Toolbox;
+
+    Player_SetTask(3, items);
 
     new ItemType:arr[ITEMTASKS_MAX_ITEMS_PER_TASK];
 

@@ -6,6 +6,7 @@ forward ItemTasks_DefineItemType(ItemType:itemtype, reward);
 forward ItemType:ItemTasks_GetItemTypeByIndex(index);
 forward ItemTasks_GetTotalDefinedItems();
 forward ItemTasks_GetItemTypeReward(ItemType:itemtype);
+forward bool:ItemTasks_IsItemTypeDefined(ItemType:itemtype);
 
 static
 Map:definedItems,
@@ -71,6 +72,14 @@ stock ItemTasks_GetItemTypeReward(ItemType:itemtype) {
     }
 
     return map_get(definedItems, _:itemtype);
+}
+
+stock bool:ItemTasks_IsItemTypeDefined(ItemType:itemtype) {
+    if (!IsValidItemType(itemtype)) {
+        return false;
+    }
+
+    return map_has_key(definedItems, _:itemtype);
 }
 
 #include "itemtasks-player"

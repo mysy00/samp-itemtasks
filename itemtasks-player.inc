@@ -9,6 +9,7 @@
 #endif
 
 forward Player_SetRandomTask(playerid);
+forward Player_SetTask(playerid, const ItemType:items[], size = sizeof items);
 forward Player_CompleteTask(playerid);
 forward bool:Player_HasActiveTask(playerid);
 forward OnPlayerCompleteTask(playerid, totalReward);
@@ -17,6 +18,28 @@ static List:playerTaskItems[MAX_PLAYERS] = { INVALID_LIST, ... };
 
 hook OnPlayerDisconnected(playerid) {
     list_delete(playerTaskItems[playerid]);
+}
+
+stock Player_SetTask(playerid, const ItemType:items[], size = sizeof items) {
+    new List:list = playerTaskItems[playerid];
+
+    if (Player_HasActiveTask(playerid)) {
+        return 0;
+    }
+
+    if (!list_valid(list)) {
+        list = list_new();
+    }
+
+    for (new i = 0; i < size; i++) {
+        if (!ItemTasks_IsItemTypeDefined(items[i])) {
+            continue;
+        }
+
+        list_add(list, _:items[i]);
+    }
+
+    return 1;
 }
 
 stock Player_SetRandomTask(playerid) {
