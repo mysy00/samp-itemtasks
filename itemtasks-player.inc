@@ -17,7 +17,9 @@ forward OnPlayerCompleteTask(playerid, totalReward);
 static List:playerTaskItems[MAX_PLAYERS] = { INVALID_LIST, ... };
 
 hook OnPlayerDisconnected(playerid) {
-    list_delete(playerTaskItems[playerid]);
+    if (list_valid(playerTaskItems[playerid])) {
+        list_delete(playerTaskItems[playerid]);
+    }
 }
 
 stock Player_SetTask(playerid, const ItemType:items[], size = sizeof items) {
