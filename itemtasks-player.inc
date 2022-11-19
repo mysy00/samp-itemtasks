@@ -1,7 +1,7 @@
 #include <YSI_Coding\y_hooks>
 
 #if !defined ITEMTASKS_MIN_ITEMS_PER_TASK
-    #define ITEMTASKS_MIN_ITEMS_PER_TASK     (0)
+    #define ITEMTASKS_MIN_ITEMS_PER_TASK     (1)
 #endif
 
 #if !defined ITEMTASKS_MAX_ITEMS_PER_TASK
