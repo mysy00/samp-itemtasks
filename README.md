@@ -28,8 +28,8 @@ forward ItemTasks_GetTotalDefinedItems();
 forward ItemTasks_GetItemTypeReward(ItemType:itemtype);
 
 forward Player_SetItemTask(playerid);
-forward Player_CompleteTask(playerid);
-forward bool:Player_HasActiveTask(playerid);
+forward ItemTasks_CompletePlayerTask(playerid);
+forward bool:ItemTasks_HasPlayerActiveTask(playerid);
 forward OnPlayerCompleteTask(playerid, totalReward);
 ```
 

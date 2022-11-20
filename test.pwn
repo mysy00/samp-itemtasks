@@ -14,11 +14,11 @@ public OnGameModeInit() {
     ItemTasks_DefineItemType(item_Toolbox, 5);
     ItemTasks_DefineItemType(item_Tire, 2);
 
-    Player_SetRandomTask(0);
+    ItemTasks_SetPlayerRandomTask(0);
     printf("----------------------------------------");
-    Player_SetRandomTask(1);
+    ItemTasks_SetPlayerRandomTask(1);
     printf("----------------------------------------");
-    Player_SetRandomTask(2);
+    ItemTasks_SetPlayerRandomTask(2);
     printf("----------------------------------------");
 
     new ItemType:items[3];
@@ -26,15 +26,15 @@ public OnGameModeInit() {
     items[1] = item_Marijuana;
     items[2] = item_Toolbox;
 
-    Player_SetTask(3, items);
+    ItemTasks_SetPlayerTask(3, items);
 
     new ItemType:arr[ITEMTASKS_MAX_ITEMS_PER_TASK];
 
-    Player_GetActiveTaskItemTypes(1, arr);
+    ItemTasks_GetPlayerTaskItems(1, arr);
 
     for (new i = 0; i < sizeof(arr); i++) {
         printf("Item: %d", _:arr[i]);
     }
 
-    Player_CompleteTask(1);
+    ItemTasks_CompletePlayerTask(1);
 }
