@@ -63,7 +63,7 @@ stock ItemTasks_GetTotalDefinedItems() {
 }
 
 stock ItemTasks_GetItemTypeReward(ItemType:itemtype) {
-    if (!IsValidItemType(itemtype)) {
+    if (!ItemTasks_IsItemTypeDefined(itemtype)) {
         return 0;
     }
 
